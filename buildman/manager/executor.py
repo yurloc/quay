@@ -254,6 +254,7 @@ class EC2Executor(BuilderExecutor):
         if self.executor_config.get("EC2_VPC_SUBNET_ID", None) is not None:
             interfaces = [
                 {
+                    "DeviceIndex": 0,
                     "SubnetId": self.executor_config["EC2_VPC_SUBNET_ID"],
                     "Groups": self.executor_config["EC2_SECURITY_GROUP_IDS"],
                     "AssociatePublicIpAddress": True,
@@ -270,6 +271,8 @@ class EC2Executor(BuilderExecutor):
                     InstanceInitiatedShutdownBehavior="terminate",
                     BlockDeviceMappings=block_device_mappings,
                     NetworkInterfaces=interfaces,
+                    MinCount=1,
+                    MaxCount=1,
                 )
             )
         except (ec2_conn.exceptions.ClientError, botocore.exceptions.ClientError) as ec2e:
