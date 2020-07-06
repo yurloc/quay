@@ -392,8 +392,7 @@ class KubernetesExecutor(BuilderExecutor):
         self._loop = get_event_loop()
         self.namespace = self.executor_config.get("BUILDER_NAMESPACE", "builder")
         self.image = self.executor_config.get(
-            # TODO(kleesc): Update this build
-            "BUILDER_VM_CONTAINER_IMAGE", "quay.io/quay/quay-builder-qemu-coreos:stable"
+            "BUILDER_VM_CONTAINER_IMAGE", "quay.io/quay/quay-builder-qemu-fedoracoreos:stable"
         )
 
     @coroutine
