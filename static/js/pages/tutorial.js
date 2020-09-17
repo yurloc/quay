@@ -116,7 +116,7 @@
         },
         {
           'title': 'Tag List',
-          'content': 'The tag list displays shows the full list of active tags in the repository. ' +
+          'content': 'The tag list displays the full list of active tags in the repository. ' +
             'You can click on an image to see its information or click on a tag to see its history.',
           'element': '#tagsTable',
           'overlayable': true
