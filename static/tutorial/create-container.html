@@ -6,10 +6,10 @@
 <code ng-show="tour.tourScope.showSudo">sudo </code>docker run busybox echo "fun" > newfile
 </pre>
 
-<p>The container will immediately terminate (because its one command is <code>echo</code>), so we'll use <code>docker ps -l</code> to list it:
+<p>The container will immediately terminate (because its one command is <code>echo</code>), so we'll use <code>docker ps -n 1</code> to list it:
 
 <pre class="command">
-<code ng-show="tour.tourScope.showSudo">sudo </code>docker ps -l
+<code ng-show="tour.tourScope.showSudo">sudo </code>docker ps -n 1
 CONTAINER ID        IMAGE               COMMAND             CREATED
 <var class="var1">07f2065197ef</var>          busybox:latest        echo fun            31 seconds ago
 </pre>
