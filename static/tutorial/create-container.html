@@ -3,15 +3,15 @@
 <p>First we'll create a container with a single new file based off of the <code>busybox</code> base image:</p>
 
 <pre class="command">
-<code ng-show="tour.tourScope.showSudo">sudo </code>docker run busybox echo "fun" > newfile
+<code ng-show="tour.tourScope.showSudo">sudo </code>docker run busybox sh -c "echo a > newfile"
 </pre>
 
-<p>The container will immediately terminate (because its one command is <code>echo</code>), so we'll use <code>docker ps -n 1</code> to list it:
+<p>The container will immediately terminate (because its one command is <code>sh -c "..."</code>), so we'll use <code>docker ps -n 1</code> to list it:
 
 <pre class="command">
 <code ng-show="tour.tourScope.showSudo">sudo </code>docker ps -n 1
-CONTAINER ID        IMAGE               COMMAND             CREATED
-<var class="var1">07f2065197ef</var>          busybox:latest        echo fun            31 seconds ago
+CONTAINER ID  IMAGE                             COMMAND               CREATED         STATUS                     PORTS   NAMES
+<var class="var1">63f8105cf522</var>  docker.io/library/busybox:latest  sh -c echo a > ne...  10 seconds ago  Exited (0) 10 seconds ago          cranky_bardeen
 </pre>
 
 <div class="user-enter-box">
